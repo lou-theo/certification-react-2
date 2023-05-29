@@ -1,7 +1,8 @@
 import './App.scss';
+import QuizMaker from '@components/QuizMaker/QuizMaker.tsx';
 
 function App() {
-  return <></>;
+  return <QuizMaker />;
 }
 
 export default App;
