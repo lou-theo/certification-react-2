@@ -1,38 +1,37 @@
 import { QuestionModel } from '@models/Question.model.ts';
 import { QuestionsAction } from '@models/QuestionAction.type.ts';
-import { createContext, Dispatch, ReactNode, useReducer } from 'react';
+import { createContext, Dispatch, ReactNode } from 'react';
+import { useImmerReducer } from 'use-immer';
 
 const initialQuestions: QuestionModel[] = [];
 
 export const QuestionsContext = createContext<QuestionModel[]>(initialQuestions);
 export const QuestionsDispatchContext = createContext<Dispatch<QuestionsAction>>(() => ({}));
 
-function questionsReducer(questions: QuestionModel[], action: QuestionsAction): QuestionModel[] {
+function questionsReducer(questions: QuestionModel[], action: QuestionsAction): void {
   switch (action.type) {
     case 'create': {
-      return [...action.payload];
+      questions.push(...action.payload);
+      return;
     }
     case 'answerQuestion': {
-      const questionIndex = questions.findIndex((question) => question.id === action.payload.questionId);
-      if (questionIndex === -1) {
-        return questions;
+      const question = questions.find((question) => question.id === action.payload.questionId);
+      if (!question) {
+        return;
       }
-      const newQuestion: QuestionModel = { ...questions[questionIndex], selectedOptionId: action.payload.optionId };
-      const newQuestions = [...questions.filter((question) => question.id !== action.payload.questionId)];
-      newQuestions.splice(questionIndex, 0, newQuestion);
-      return newQuestions;
+      question.selectedOptionId = action.payload.optionId;
+      return;
     }
     case 'reset': {
-      return [];
-    }
-    default: {
-      return questions;
+      // empty the array
+      questions.splice(0, questions.length);
+      return;
     }
   }
 }
 
 export function QuestionsProvider({ children }: { children?: ReactNode }) {
-  const [questions, dispatch] = useReducer(questionsReducer, initialQuestions);
+  const [questions, dispatch] = useImmerReducer(questionsReducer, initialQuestions);
 
   return (
     <QuestionsContext.Provider value={questions}>
