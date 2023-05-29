@@ -1,10 +1,25 @@
-import './App.scss';
+import { useQuestions } from '@/hooks/Questions.hooks.ts';
 import { QuestionsProvider } from '@/store/QuestionsProvider.tsx';
 import QuizMaker from '@components/QuizMaker/QuizMaker.tsx';
 import QuizResults from '@components/QuizResults/QuizResults.tsx';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import * as React from 'react';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import './App.scss';
+import Element = React.JSX.Element;
 
-function App() {
+function IsQuizCompletedGuard({ children }: { children: Element }) {
+  const questions = useQuestions();
+  const numberOfSelectedQuestions = questions.filter((question) => question.selectedOptionId).length;
+  const isQuizComplete = questions.length > 0 && numberOfSelectedQuestions === questions.length;
+
+  if (!isQuizComplete) {
+    return <Navigate replace to="/" />;
+  }
+
+  return children;
+}
+
+export default function App() {
   const router = createBrowserRouter([
     {
       path: '/',
@@ -12,7 +27,11 @@ function App() {
     },
     {
       path: '/results',
-      element: <QuizResults />,
+      element: (
+        <IsQuizCompletedGuard>
+          <QuizResults />
+        </IsQuizCompletedGuard>
+      ),
     },
   ]);
 
@@ -22,5 +41,3 @@ function App() {
     </QuestionsProvider>
   );
 }
-
-export default App;
