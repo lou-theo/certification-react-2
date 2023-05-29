@@ -33,12 +33,14 @@ export default function QuizSelectors() {
     <>
       <Select
         id="categorySelect"
+        placeholder="Select a category"
         options={categoryOptions}
         value={selectedCategoryId}
         onChange={setSelectedCategoryId}
       />
       <Select
         id="difficultySelect"
+        placeholder="Select difficulty"
         options={difficultyOptions}
         value={selectedDifficulty}
         onChange={(newValue: string) => setSelectedDifficulty(newValue as DifficultyLevelEnum)}

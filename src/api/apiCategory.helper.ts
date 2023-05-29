@@ -9,9 +9,7 @@ export const fetchCategories = async (options?: {
 }): Promise<ApiCategoryModel[]> => {
   const apiTriviaCategoriesModel: ApiTriviaCategoriesModel | undefined = await getUrl<ApiTriviaCategoriesModel>(
     'https://opentdb.com/api_category.php',
-    {
-      abortAxiosSignal: options?.abortAxiosSignal,
-    },
+    options,
   );
   return apiTriviaCategoriesModel?.trivia_categories ?? [];
 };
