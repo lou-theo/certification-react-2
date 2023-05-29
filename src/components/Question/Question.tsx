@@ -1,4 +1,3 @@
-import { useQuestionsDispatch } from '@/hooks/Questions.hooks.ts';
 import QuestionOption from '@components/QuestionOption/QuestionOption.tsx';
 import { QuestionModel } from '@models/Question.model.ts';
 import { QuestionOptionStatusEnum } from '@models/QuestionOptionStatus.enum.ts';
@@ -6,10 +5,13 @@ import styles from './Question.module.scss';
 
 interface QuestionProps {
   question: QuestionModel;
+  onQuestionAnswered: (questionId: string, optionId: string) => void;
 }
 
 export default function Question(props: QuestionProps) {
-  const dispatch = useQuestionsDispatch();
+  const onQuestionAnswered = (optionId: string) => {
+    props.onQuestionAnswered(props.question.id, optionId);
+  };
 
   return (
     <div className={styles.question}>
@@ -24,9 +26,7 @@ export default function Question(props: QuestionProps) {
                 ? QuestionOptionStatusEnum.selected
                 : QuestionOptionStatusEnum.unanswered
             }
-            onClick={(optionId) =>
-              dispatch({ type: 'answerQuestion', payload: { questionId: props.question.id, optionId } })
-            }
+            onClick={onQuestionAnswered}
           />
         ))}
       </div>
