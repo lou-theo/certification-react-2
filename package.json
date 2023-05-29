@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "build:github-page": "rm -f -r docs && npm run build && mv dist docs && rm -f -r dist",
+    "build:github-page": "rm -f -r docs && npm run build && cp -R dist docs && rm -f -r dist",
     "lint:js": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:prettier": "prettier --config .prettierrc --write",
     "lint:prettier-all": "npm run lint:prettier -- \"./**/*.{md,ts,js,tsx,jsx,json,html,scss,css}\"",
