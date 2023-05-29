@@ -6,7 +6,13 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint:js": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:prettier": "prettier --config .prettierrc --write",
+    "lint:prettier-all": "npm run lint:prettier -- \"./**/*.{md,ts,js,tsx,jsx,json,html,scss,css}\"",
+    "lint": "npm run lint:js && npm run lint:prettier-all"
+  },
+  "lint-staged": {
+    "*.{md,ts,js,tsx,jsx,json,html,scss,css}": "npm run lint:prettier --"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -22,6 +28,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "prettier": "2.8.8",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }
