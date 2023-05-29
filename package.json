@@ -17,6 +17,7 @@
     "*.{md,ts,js,tsx,jsx,json,html,scss,css}": "npm run lint:prettier --"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.62.1"
