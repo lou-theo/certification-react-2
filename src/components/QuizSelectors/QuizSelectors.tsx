@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import styles from './QuizSelectors.module.scss';
 
 export default function QuizSelectors() {
+  // region category select
   const [categoryOptions, setCategoryOptions] = useState<SelectOptionModel[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | undefined>(undefined);
 
@@ -24,24 +25,25 @@ export default function QuizSelectors() {
       abortCategoryFetch.abort();
     };
   }, []);
+  // endregion
 
+  // region difficulty select
   const difficultyOptions: SelectOptionModel[] = [
     { value: DifficultyLevelEnum.Easy },
     { value: DifficultyLevelEnum.Medium },
     { value: DifficultyLevelEnum.Hard },
   ];
   const [selectedDifficulty, setSelectedDifficulty] = useState<DifficultyLevelEnum | undefined>(undefined);
+  // endregion
 
+  // region create button
   const questionsDispatch = useQuestionsDispatch();
 
   const onQuizCreate = async (categoryId: string, difficulty: DifficultyLevelEnum) => {
-    const abortQuestionsFetch = new AbortController();
-    const questions = await fetchQuestionList(
-      { categoryId, difficulty },
-      { abortAxiosSignal: abortQuestionsFetch.signal },
-    );
+    const questions = await fetchQuestionList({ categoryId, difficulty });
     questionsDispatch({ type: 'create', payload: questions });
   };
+  // endregion
 
   return (
     <>
