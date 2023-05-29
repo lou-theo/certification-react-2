@@ -1,5 +1,5 @@
 export interface QuestionOptionModel {
-  id?: string;
+  id: string;
   text: string;
   isCorrect: boolean;
 }

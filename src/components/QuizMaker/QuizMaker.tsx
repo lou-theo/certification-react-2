@@ -1,3 +1,4 @@
+import QuestionList from '@components/QuestionList/QuestionList.tsx';
 import QuizSelectors from '@components/QuizSelectors/QuizSelectors.tsx';
 
 export default function QuizMaker() {
@@ -5,6 +6,7 @@ export default function QuizMaker() {
     <>
       <h1>QUIZ MAKER</h1>
       <QuizSelectors />
+      <QuestionList />
     </>
   );
 }

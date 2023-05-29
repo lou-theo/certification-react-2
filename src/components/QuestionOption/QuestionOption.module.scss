@@ -1,0 +1,44 @@
+.option {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+  margin: 0 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  height: 3rem;
+
+  &__unanswered {
+    composes: option;
+  }
+
+  &__correct {
+    composes: option;
+    border-color: #28a745;
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  &__incorrect {
+    composes: option;
+    border-color: #dc3545;
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  &__selected {
+    composes: option;
+    border-color: #007bff;
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  &:hover {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+}
