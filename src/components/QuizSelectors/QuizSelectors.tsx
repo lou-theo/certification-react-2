@@ -3,8 +3,13 @@ import Select from '@components/Select/Select.tsx';
 import { DifficultyLevelEnum } from '@models/DifficultyLevel.enum.ts';
 import { SelectOptionModel } from '@models/SelectOption.model.ts';
 import { useEffect, useState } from 'react';
+import styles from './QuizSelectors.module.scss';
 
-export default function QuizSelectors() {
+interface QuizSelectorsProps {
+  onQuizCreate: (categoryId: string, difficulty: DifficultyLevelEnum) => void;
+}
+
+export default function QuizSelectors(props: QuizSelectorsProps) {
   const [categoryOptions, setCategoryOptions] = useState<SelectOptionModel[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | undefined>(undefined);
 
@@ -45,6 +50,14 @@ export default function QuizSelectors() {
         value={selectedDifficulty}
         onChange={(newValue: string) => setSelectedDifficulty(newValue as DifficultyLevelEnum)}
       />
+      <button
+        id="createBtn"
+        className={styles.createButton}
+        disabled={!selectedCategoryId || !selectedDifficulty}
+        onClick={() => props.onQuizCreate(selectedCategoryId as string, selectedDifficulty as DifficultyLevelEnum)}
+      >
+        Create
+      </button>
     </>
   );
 }

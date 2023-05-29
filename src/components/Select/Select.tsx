@@ -14,10 +14,11 @@ export default function Select(props: SelectProps) {
     <select
       id={props.id}
       value={props.value}
+      defaultValue=""
       onChange={($event) => props.onChange($event.target.value)}
       className={styles.customSelect}
     >
-      <option value="" disabled selected>
+      <option value="" disabled>
         {props.placeholder ?? 'Select your option'}
       </option>
       {props.options.map((option: SelectOptionModel) => {
