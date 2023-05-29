@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+npm run build:github-page
+git add docs/\*
 npm run lint:js
 npx lint-staged
