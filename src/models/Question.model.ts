@@ -4,4 +4,5 @@ export interface QuestionModel {
   id: string;
   text: string;
   options: QuestionOptionModel[];
+  selectedOptionId?: string;
 }

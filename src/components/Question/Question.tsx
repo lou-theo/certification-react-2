@@ -1,3 +1,4 @@
+import { useQuestionsDispatch } from '@/hooks/Questions.hooks.ts';
 import QuestionOption from '@components/QuestionOption/QuestionOption.tsx';
 import { QuestionModel } from '@models/Question.model.ts';
 import { QuestionOptionStatusEnum } from '@models/QuestionOptionStatus.enum.ts';
@@ -8,15 +9,24 @@ interface QuestionProps {
 }
 
 export default function Question(props: QuestionProps) {
+  const dispatch = useQuestionsDispatch();
+
   return (
     <div className={styles.question}>
       <div className={styles.questionText} dangerouslySetInnerHTML={{ __html: props.question.text }}></div>
       <div>
         {props.question.options.map((option) => (
           <QuestionOption
-            status={QuestionOptionStatusEnum.unanswered}
+            key={option.id}
             option={option}
-            onClick={(optionId) => optionId}
+            status={
+              props.question.selectedOptionId === option.id
+                ? QuestionOptionStatusEnum.selected
+                : QuestionOptionStatusEnum.unanswered
+            }
+            onClick={(optionId) =>
+              dispatch({ type: 'answerQuestion', payload: { questionId: props.question.id, optionId } })
+            }
           />
         ))}
       </div>

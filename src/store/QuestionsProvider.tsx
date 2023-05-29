@@ -12,6 +12,16 @@ function questionsReducer(questions: QuestionModel[], action: QuestionsAction): 
     case 'create': {
       return [...action.payload];
     }
+    case 'answerQuestion': {
+      const questionIndex = questions.findIndex((question) => question.id === action.payload.questionId);
+      if (questionIndex === -1) {
+        return questions;
+      }
+      const newQuestion: QuestionModel = { ...questions[questionIndex], selectedOptionId: action.payload.optionId };
+      const newQuestions = [...questions.filter((question) => question.id !== action.payload.questionId)];
+      newQuestions.splice(questionIndex, 0, newQuestion);
+      return newQuestions;
+    }
     case 'reset': {
       return [];
     }

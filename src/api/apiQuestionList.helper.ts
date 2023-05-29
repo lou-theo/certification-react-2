@@ -30,12 +30,12 @@ export const mapApiQuestionToQuestionModel = (apiQuestion: ApiQuestionModel, id:
     ...apiQuestion.incorrect_answers.map((incorrectAnswer: string) => {
       return {
         text: incorrectAnswer,
-        isCorrect: false,
+        isAnswer: false,
       };
     }),
     {
       text: apiQuestion.correct_answer,
-      isCorrect: true,
+      isAnswer: true,
     },
   ];
 
