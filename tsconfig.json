@@ -20,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Aliases */
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],

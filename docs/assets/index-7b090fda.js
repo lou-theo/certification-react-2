@@ -7893,8 +7893,8 @@ nc(), (bi.exports = ge);
 var Td = bi.exports,
   Bi = Td;
 (Ql.createRoot = Bi.createRoot), (Ql.hydrateRoot = Bi.hydrateRoot);
-const Rd = '/assets/react-35ef61ed.svg',
-  Od = '/vite.svg';
+const Rd = '' + new URL('react-35ef61ed.svg', import.meta.url).href,
+  Od = '' + new URL('../vite.svg', import.meta.url).href;
 function Md() {
   const [e, n] = el.useState(0);
   return le.jsxs(le.Fragment, {

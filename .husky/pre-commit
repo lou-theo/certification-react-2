@@ -4,4 +4,4 @@
 npm run build:github-page
 git add docs/\*
 npm run lint:js
-npx lint-staged --allow-empty
+npx lint-staged
