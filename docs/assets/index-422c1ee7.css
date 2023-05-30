@@ -58,3 +58,17 @@
   padding: 0 1em;
   border-radius: 0.25em;
 }
+._marginLeft_p80pq_1 {
+  margin-left: 100px;
+}
+.buttonLink {
+  text-decoration: none;
+  background-color: #5d5a5a;
+  color: #fff;
+  border-radius: 5px;
+  height: 3rem;
+  width: 200px;
+  display: block;
+  text-align: center;
+  line-height: 3rem;
+}

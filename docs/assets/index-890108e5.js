@@ -8553,7 +8553,7 @@ const Wv = (e, t, n, { allOwnKeys: r } = {}) => (
     (t, n) =>
       e.call(t, n)
   )(Object.prototype),
-  e0 = Et('RegExp'),
+  eg = Et('RegExp'),
   Jp = (e, t) => {
     const n = Object.getOwnPropertyDescriptors(e),
       r = {};
@@ -8562,7 +8562,7 @@ const Wv = (e, t, n, { allOwnKeys: r } = {}) => (
     }),
       Object.defineProperties(e, r);
   },
-  t0 = (e) => {
+  tg = (e) => {
     Jp(e, (t, n) => {
       if (tt(e) && ['arguments', 'caller', 'callee'].indexOf(n) !== -1) return !1;
       const r = e[n];
@@ -8578,7 +8578,7 @@ const Wv = (e, t, n, { allOwnKeys: r } = {}) => (
       }
     });
   },
-  n0 = (e, t) => {
+  ng = (e, t) => {
     const n = {},
       r = (o) => {
         o.forEach((i) => {
@@ -8587,21 +8587,21 @@ const Wv = (e, t, n, { allOwnKeys: r } = {}) => (
       };
     return vr(e) ? r(e) : r(String(e).split(t)), n;
   },
-  r0 = () => {},
-  o0 = (e, t) => ((e = +e), Number.isFinite(e) ? e : t),
+  rg = () => {},
+  og = (e, t) => ((e = +e), Number.isFinite(e) ? e : t),
   eu = 'abcdefghijklmnopqrstuvwxyz',
   $c = '0123456789',
   qp = { DIGIT: $c, ALPHA: eu, ALPHA_DIGIT: eu + eu.toUpperCase() + $c },
-  i0 = (e = 16, t = qp.ALPHA_DIGIT) => {
+  ig = (e = 16, t = qp.ALPHA_DIGIT) => {
     let n = '';
     const { length: r } = t;
     for (; e--; ) n += t[(Math.random() * r) | 0];
     return n;
   };
-function l0(e) {
+function lg(e) {
   return !!(e && tt(e.append) && e[Symbol.toStringTag] === 'FormData' && e[Symbol.iterator]);
 }
-const u0 = (e) => {
+const ug = (e) => {
     const t = new Array(10),
       n = (r, o) => {
         if (al(r)) {
@@ -8623,8 +8623,8 @@ const u0 = (e) => {
       };
     return n(e, 0);
   },
-  s0 = Et('AsyncFunction'),
-  a0 = (e) => e && (al(e) || tt(e)) && tt(e.then) && tt(e.catch),
+  sg = Et('AsyncFunction'),
+  ag = (e) => e && (al(e) || tt(e)) && tt(e.then) && tt(e.catch),
   _ = {
     isArray: vr,
     isArrayBuffer: Hp,
@@ -8640,7 +8640,7 @@ const u0 = (e) => {
     isDate: Av,
     isFile: Fv,
     isBlob: jv,
-    isRegExp: e0,
+    isRegExp: eg,
     isFunction: tt,
     isStream: Iv,
     isURLSearchParams: $v,
@@ -8663,20 +8663,20 @@ const u0 = (e) => {
     hasOwnProperty: Bc,
     hasOwnProp: Bc,
     reduceDescriptors: Jp,
-    freezeMethods: t0,
-    toObjectSet: n0,
+    freezeMethods: tg,
+    toObjectSet: ng,
     toCamelCase: bv,
-    noop: r0,
-    toFiniteNumber: o0,
+    noop: rg,
+    toFiniteNumber: og,
     findKey: Vp,
     global: Qp,
     isContextDefined: Kp,
     ALPHABET: qp,
-    generateString: i0,
-    isSpecCompliantForm: l0,
-    toJSONObject: u0,
-    isAsyncFn: s0,
-    isThenable: a0,
+    generateString: ig,
+    isSpecCompliantForm: lg,
+    toJSONObject: ug,
+    isAsyncFn: sg,
+    isThenable: ag,
   };
 function J(e, t, n, r, o) {
   Error.call(this),
@@ -8743,7 +8743,7 @@ J.from = (e, t, n, r, o, i) => {
     l
   );
 };
-const c0 = null;
+const cg = null;
 function ls(e) {
   return _.isPlainObject(e) || _.isArray(e);
 }
@@ -8760,10 +8760,10 @@ function Hc(e, t, n) {
         .join(n ? '.' : '')
     : t;
 }
-function f0(e) {
+function fg(e) {
   return _.isArray(e) && !e.some(ls);
 }
-const d0 = _.toFlatObject(_, {}, null, function (t) {
+const dg = _.toFlatObject(_, {}, null, function (t) {
   return /^is[A-Z]/.test(t);
 });
 function cl(e, t, n) {
@@ -8792,7 +8792,7 @@ function cl(e, t, n) {
     let c = y;
     if (y && !R && typeof y == 'object') {
       if (_.endsWith(v, '{}')) (v = r ? v : v.slice(0, -2)), (y = JSON.stringify(y));
-      else if ((_.isArray(y) && f0(y)) || ((_.isFileList(y) || _.endsWith(v, '[]')) && (c = _.toArray(y))))
+      else if ((_.isArray(y) && fg(y)) || ((_.isFileList(y) || _.endsWith(v, '[]')) && (c = _.toArray(y))))
         return (
           (v = Gp(v)),
           c.forEach(function (h, g) {
@@ -8804,7 +8804,7 @@ function cl(e, t, n) {
     return ls(y) ? !0 : (t.append(Hc(R, v, i), a(y)), !1);
   }
   const p = [],
-    m = Object.assign(d0, { defaultVisitor: f, convertValue: a, isVisitable: ls });
+    m = Object.assign(dg, { defaultVisitor: f, convertValue: a, isVisitable: ls });
   function w(y, v) {
     if (!_.isUndefined(y)) {
       if (p.indexOf(y) !== -1) throw Error('Circular reference detected in ' + v.join('.'));
@@ -8844,7 +8844,7 @@ Zp.toString = function (t) {
     }, '')
     .join('&');
 };
-function p0(e) {
+function pg(e) {
   return encodeURIComponent(e)
     .replace(/%3A/gi, ':')
     .replace(/%24/g, '$')
@@ -8855,7 +8855,7 @@ function p0(e) {
 }
 function bp(e, t, n) {
   if (!t) return e;
-  const r = (n && n.encode) || p0,
+  const r = (n && n.encode) || pg,
     o = n && n.serialize;
   let i;
   if ((o ? (i = o(t, n)) : (i = _.isURLSearchParams(t) ? t.toString() : new ca(t, n).toString(r)), i)) {
@@ -8864,7 +8864,7 @@ function bp(e, t, n) {
   }
   return e;
 }
-class h0 {
+class hg {
   constructor() {
     this.handlers = [];
   }
@@ -8891,27 +8891,27 @@ class h0 {
     });
   }
 }
-const Vc = h0,
+const Vc = hg,
   eh = { silentJSONParsing: !0, forcedJSONParsing: !0, clarifyTimeoutError: !1 },
-  m0 = typeof URLSearchParams < 'u' ? URLSearchParams : ca,
-  y0 = typeof FormData < 'u' ? FormData : null,
-  v0 = typeof Blob < 'u' ? Blob : null,
-  g0 = (() => {
+  mg = typeof URLSearchParams < 'u' ? URLSearchParams : ca,
+  yg = typeof FormData < 'u' ? FormData : null,
+  vg = typeof Blob < 'u' ? Blob : null,
+  gg = (() => {
     let e;
     return typeof navigator < 'u' && ((e = navigator.product) === 'ReactNative' || e === 'NativeScript' || e === 'NS')
       ? !1
       : typeof window < 'u' && typeof document < 'u';
   })(),
-  w0 = (() =>
+  wg = (() =>
     typeof WorkerGlobalScope < 'u' && self instanceof WorkerGlobalScope && typeof self.importScripts == 'function')(),
   gt = {
     isBrowser: !0,
-    classes: { URLSearchParams: m0, FormData: y0, Blob: v0 },
-    isStandardBrowserEnv: g0,
-    isStandardBrowserWebWorkerEnv: w0,
+    classes: { URLSearchParams: mg, FormData: yg, Blob: vg },
+    isStandardBrowserEnv: gg,
+    isStandardBrowserWebWorkerEnv: wg,
     protocols: ['http', 'https', 'file', 'blob', 'url', 'data'],
   };
-function S0(e, t) {
+function Sg(e, t) {
   return cl(
     e,
     new gt.classes.URLSearchParams(),
@@ -8927,10 +8927,10 @@ function S0(e, t) {
     ),
   );
 }
-function E0(e) {
+function Eg(e) {
   return _.matchAll(/\w+|\[(\w*)]/g, e).map((t) => (t[0] === '[]' ? '' : t[1] || t[0]));
 }
-function _0(e) {
+function _g(e) {
   const t = {},
     n = Object.keys(e);
   let r;
@@ -8948,22 +8948,22 @@ function th(e) {
       (l = !l && _.isArray(o) ? o.length : l),
       s
         ? (_.hasOwnProp(o, l) ? (o[l] = [o[l], r]) : (o[l] = r), !u)
-        : ((!o[l] || !_.isObject(o[l])) && (o[l] = []), t(n, r, o[l], i) && _.isArray(o[l]) && (o[l] = _0(o[l])), !u)
+        : ((!o[l] || !_.isObject(o[l])) && (o[l] = []), t(n, r, o[l], i) && _.isArray(o[l]) && (o[l] = _g(o[l])), !u)
     );
   }
   if (_.isFormData(e) && _.isFunction(e.entries)) {
     const n = {};
     return (
       _.forEachEntry(e, (r, o) => {
-        t(E0(r), o, n, 0);
+        t(Eg(r), o, n, 0);
       }),
       n
     );
   }
   return null;
 }
-const k0 = { 'Content-Type': void 0 };
-function x0(e, t, n) {
+const kg = { 'Content-Type': void 0 };
+function xg(e, t, n) {
   if (_.isString(e))
     try {
       return (t || JSON.parse)(e), _.trim(e);
@@ -8987,13 +8987,13 @@ const fl = {
         return n.setContentType('application/x-www-form-urlencoded;charset=utf-8', !1), t.toString();
       let u;
       if (i) {
-        if (r.indexOf('application/x-www-form-urlencoded') > -1) return S0(t, this.formSerializer).toString();
+        if (r.indexOf('application/x-www-form-urlencoded') > -1) return Sg(t, this.formSerializer).toString();
         if ((u = _.isFileList(t)) || r.indexOf('multipart/form-data') > -1) {
           const s = this.env && this.env.FormData;
           return cl(u ? { 'files[]': t } : t, s && new s(), this.formSerializer);
         }
       }
-      return i || o ? (n.setContentType('application/json', !1), x0(t)) : t;
+      return i || o ? (n.setContentType('application/json', !1), xg(t)) : t;
     },
   ],
   transformResponse: [
@@ -9027,10 +9027,10 @@ _.forEach(['delete', 'get', 'head'], function (t) {
   fl.headers[t] = {};
 });
 _.forEach(['post', 'put', 'patch'], function (t) {
-  fl.headers[t] = _.merge(k0);
+  fl.headers[t] = _.merge(kg);
 });
 const fa = fl,
-  C0 = _.toObjectSet([
+  Cg = _.toObjectSet([
     'age',
     'authorization',
     'content-length',
@@ -9049,7 +9049,7 @@ const fa = fl,
     'retry-after',
     'user-agent',
   ]),
-  R0 = (e) => {
+  Rg = (e) => {
     const t = {};
     let n, r, o;
     return (
@@ -9063,7 +9063,7 @@ const fa = fl,
             (o = l.indexOf(':')),
               (n = l.substring(0, o).trim().toLowerCase()),
               (r = l.substring(o + 1).trim()),
-              !(!n || (t[n] && C0[n])) &&
+              !(!n || (t[n] && Cg[n])) &&
                 (n === 'set-cookie' ? (t[n] ? t[n].push(r) : (t[n] = [r])) : (t[n] = t[n] ? t[n] + ', ' + r : r));
           }),
       t
@@ -9076,14 +9076,14 @@ function Dr(e) {
 function ai(e) {
   return e === !1 || e == null ? e : _.isArray(e) ? e.map(ai) : String(e);
 }
-function P0(e) {
+function Pg(e) {
   const t = Object.create(null),
     n = /([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;
   let r;
   for (; (r = n.exec(e)); ) t[r[1]] = r[2];
   return t;
 }
-const N0 = (e) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(e.trim());
+const Ng = (e) => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(e.trim());
 function tu(e, t, n, r, o) {
   if (_.isFunction(r)) return r.call(this, t, n);
   if ((o && (t = n), !!_.isString(t))) {
@@ -9091,13 +9091,13 @@ function tu(e, t, n, r, o) {
     if (_.isRegExp(r)) return r.test(t);
   }
 }
-function T0(e) {
+function Tg(e) {
   return e
     .trim()
     .toLowerCase()
     .replace(/([a-z\d])(\w*)/g, (t, n, r) => n.toUpperCase() + r);
 }
-function O0(e, t) {
+function Og(e, t) {
   const n = _.toCamelCase(' ' + t);
   ['get', 'set', 'has'].forEach((r) => {
     Object.defineProperty(e, r + n, {
@@ -9124,8 +9124,8 @@ class dl {
     return (
       _.isPlainObject(t) || t instanceof this.constructor
         ? l(t, n)
-        : _.isString(t) && (t = t.trim()) && !N0(t)
-        ? l(R0(t), n)
+        : _.isString(t) && (t = t.trim()) && !Ng(t)
+        ? l(Rg(t), n)
         : t != null && i(n, t, r),
       this
     );
@@ -9136,7 +9136,7 @@ class dl {
       if (r) {
         const o = this[r];
         if (!n) return o;
-        if (n === !0) return P0(o);
+        if (n === !0) return Pg(o);
         if (_.isFunction(n)) return n.call(this, o, r);
         if (_.isRegExp(n)) return n.exec(o);
         throw new TypeError('parser must be boolean|regexp|function');
@@ -9181,7 +9181,7 @@ class dl {
           (n[l] = ai(o)), delete n[i];
           return;
         }
-        const u = t ? T0(i) : String(i).trim();
+        const u = t ? Tg(i) : String(i).trim();
         u !== i && delete n[i], (n[u] = ai(o)), (r[u] = !0);
       }),
       this
@@ -9221,7 +9221,7 @@ class dl {
       o = this.prototype;
     function i(l) {
       const u = Dr(l);
-      r[u] || (O0(o, l), (r[u] = !0));
+      r[u] || (Og(o, l), (r[u] = !0));
     }
     return _.isArray(t) ? t.forEach(i) : i(t), this;
   }
@@ -9250,7 +9250,7 @@ function Ro(e, t, n) {
   J.call(this, e ?? 'canceled', J.ERR_CANCELED, t, n), (this.name = 'CanceledError');
 }
 _.inherits(Ro, J, { __CANCEL__: !0 });
-function L0(e, t, n) {
+function Lg(e, t, n) {
   const r = n.config.validateStatus;
   !n.status || !r || r(n.status)
     ? e(n)
@@ -9264,7 +9264,7 @@ function L0(e, t, n) {
         ),
       );
 }
-const D0 = gt.isStandardBrowserEnv
+const Dg = gt.isStandardBrowserEnv
   ? (function () {
       return {
         write: function (n, r, o, i, l, u) {
@@ -9294,16 +9294,16 @@ const D0 = gt.isStandardBrowserEnv
         remove: function () {},
       };
     })();
-function z0(e) {
+function zg(e) {
   return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(e);
 }
-function M0(e, t) {
+function Mg(e, t) {
   return t ? e.replace(/\/+$/, '') + '/' + t.replace(/^\/+/, '') : e;
 }
 function rh(e, t) {
-  return e && !z0(t) ? M0(e, t) : t;
+  return e && !zg(t) ? Mg(e, t) : t;
 }
-const A0 = gt.isStandardBrowserEnv
+const Ag = gt.isStandardBrowserEnv
   ? (function () {
       const t = /(msie|trident)/i.test(navigator.userAgent),
         n = document.createElement('a');
@@ -9338,11 +9338,11 @@ const A0 = gt.isStandardBrowserEnv
         return !0;
       };
     })();
-function F0(e) {
+function Fg(e) {
   const t = /^([-+\w]{1,25})(:?\/\/|:)/.exec(e);
   return (t && t[1]) || '';
 }
-function j0(e, t) {
+function jg(e, t) {
   e = e || 10;
   const n = new Array(e),
     r = new Array(e);
@@ -9366,7 +9366,7 @@ function j0(e, t) {
 }
 function Kc(e, t) {
   let n = 0;
-  const r = j0(50, 250);
+  const r = jg(50, 250);
   return (o) => {
     const i = o.loaded,
       l = o.lengthComputable ? o.total : void 0,
@@ -9386,9 +9386,9 @@ function Kc(e, t) {
     (f[t ? 'download' : 'upload'] = !0), e(f);
   };
 }
-const U0 = typeof XMLHttpRequest < 'u',
-  I0 =
-    U0 &&
+const Ug = typeof XMLHttpRequest < 'u',
+  Ig =
+    Ug &&
     function (e) {
       return new Promise(function (n, r) {
         let o = e.data;
@@ -9421,7 +9421,7 @@ const U0 = typeof XMLHttpRequest < 'u',
               config: e,
               request: a,
             };
-          L0(
+          Lg(
             function (c) {
               n(c), s();
             },
@@ -9456,7 +9456,7 @@ const U0 = typeof XMLHttpRequest < 'u',
           }),
           gt.isStandardBrowserEnv)
         ) {
-          const w = (e.withCredentials || A0(f)) && e.xsrfCookieName && D0.read(e.xsrfCookieName);
+          const w = (e.withCredentials || Ag(f)) && e.xsrfCookieName && Dg.read(e.xsrfCookieName);
           w && i.set(e.xsrfHeaderName, w);
         }
         o === void 0 && i.setContentType(null),
@@ -9476,7 +9476,7 @@ const U0 = typeof XMLHttpRequest < 'u',
             }),
             e.cancelToken && e.cancelToken.subscribe(u),
             e.signal && (e.signal.aborted ? u() : e.signal.addEventListener('abort', u)));
-        const m = F0(f);
+        const m = Fg(f);
         if (m && gt.protocols.indexOf(m) === -1) {
           r(new J('Unsupported protocol ' + m + ':', J.ERR_BAD_REQUEST, e));
           return;
@@ -9484,7 +9484,7 @@ const U0 = typeof XMLHttpRequest < 'u',
         a.send(o || null);
       });
     },
-  ci = { http: c0, xhr: I0 };
+  ci = { http: cg, xhr: Ig };
 _.forEach(ci, (e, t) => {
   if (e) {
     try {
@@ -9493,7 +9493,7 @@ _.forEach(ci, (e, t) => {
     Object.defineProperty(e, 'adapterName', { value: t });
   }
 });
-const B0 = {
+const Bg = {
   getAdapter: (e) => {
     e = _.isArray(e) ? e : [e];
     const { length: t } = e;
@@ -9518,7 +9518,7 @@ function Jc(e) {
     (e.data = nu.call(e, e.transformRequest)),
     ['post', 'put', 'patch'].indexOf(e.method) !== -1 &&
       e.headers.setContentType('application/x-www-form-urlencoded', !1),
-    B0.getAdapter(e.adapter || fa.adapter)(e).then(
+    Bg.getAdapter(e.adapter || fa.adapter)(e).then(
       function (r) {
         return ru(e), (r.data = nu.call(e, e.transformResponse, r)), (r.headers = Dt.from(r.headers)), r;
       },
@@ -9628,7 +9628,7 @@ da.transitional = function (t, n, r) {
     );
   };
 };
-function $0(e, t, n) {
+function $g(e, t, n) {
   if (typeof e != 'object') throw new J('options must be an object', J.ERR_BAD_OPTION_VALUE);
   const r = Object.keys(e);
   let o = r.length;
@@ -9644,7 +9644,7 @@ function $0(e, t, n) {
     if (n !== !0) throw new J('Unknown option ' + i, J.ERR_BAD_OPTION);
   }
 }
-const us = { assertOptions: $0, validators: da },
+const us = { assertOptions: $g, validators: da },
   Ht = us.validators;
 class Ii {
   constructor(t) {
@@ -9791,13 +9791,13 @@ class pa {
     };
   }
 }
-const H0 = pa;
-function W0(e) {
+const Hg = pa;
+function Wg(e) {
   return function (n) {
     return e.apply(null, n);
   };
 }
-function V0(e) {
+function Vg(e) {
   return _.isObject(e) && e.isAxiosError === !0;
 }
 const ss = {
@@ -9868,7 +9868,7 @@ const ss = {
 Object.entries(ss).forEach(([e, t]) => {
   ss[t] = e;
 });
-const Q0 = ss;
+const Qg = ss;
 function ih(e) {
   const t = new fi(e),
     n = $p(fi.prototype.request, t);
@@ -9884,7 +9884,7 @@ function ih(e) {
 const me = ih(fa);
 me.Axios = fi;
 me.CanceledError = Ro;
-me.CancelToken = H0;
+me.CancelToken = Hg;
 me.isCancel = nh;
 me.VERSION = oh;
 me.toFormData = cl;
@@ -9893,12 +9893,12 @@ me.Cancel = me.CanceledError;
 me.all = function (t) {
   return Promise.all(t);
 };
-me.spread = W0;
-me.isAxiosError = V0;
+me.spread = Wg;
+me.isAxiosError = Vg;
 me.mergeConfig = dr;
 me.AxiosHeaders = Dt;
 me.formToJSON = (e) => th(_.isHTMLForm(e) ? new FormData(e) : e);
-me.HttpStatusCode = Q0;
+me.HttpStatusCode = Qg;
 me.default = me;
 const Xc = me,
   lh = async (e, t) => {
@@ -9908,37 +9908,37 @@ const Xc = me,
       (!Xc.isAxiosError(n) || n.code !== 'ERR_CANCELED') && console.error(n);
     }
   },
-  K0 = async (e) => {
+  Kg = async (e) => {
     const t = await lh('https://opentdb.com/api_category.php', e);
     return (t == null ? void 0 : t.trivia_categories) ?? [];
   },
-  J0 = (e) => ({ value: e.id.toString(), label: e.name }),
-  q0 = async (e, t) => {
+  Jg = (e) => ({ value: e.id.toString(), label: e.name }),
+  qg = async (e, t) => {
     const n = await lh(
       `https://opentdb.com/api.php?amount=5&category=${e.categoryId}&difficulty=${e.difficulty}&type=multiple`,
       t,
     );
-    return n ? Y0(n) : [];
+    return n ? Yg(n) : [];
   },
-  Y0 = (e) => e.results.map((t, n) => X0(t, n.toString())),
-  X0 = (e, t) => {
+  Yg = (e) => e.results.map((t, n) => Xg(t, n.toString())),
+  Xg = (e, t) => {
     const n = [
         ...e.incorrect_answers.map((o) => ({ text: o, isAnswer: !1 })),
         { text: e.correct_answer, isAnswer: !0 },
       ],
-      r = G0(n).map((o, i) => ({ id: i.toString(), ...o }));
+      r = Gg(n).map((o, i) => ({ id: i.toString(), ...o }));
     return { id: t, text: e.question, options: r };
   },
-  G0 = (e) => e.sort(() => Math.random() - 0.5),
-  Z0 = '_customSelect_1uk1g_1',
-  b0 = { customSelect: Z0 };
+  Gg = (e) => e.sort(() => Math.random() - 0.5),
+  Zg = '_customSelect_1uk1g_1',
+  bg = { customSelect: Zg };
 function Gc(e) {
   return K.jsxs('select', {
     id: e.id,
     value: e.value,
     defaultValue: '',
     onChange: (t) => e.onChange(t.target.value),
-    className: b0.customSelect,
+    className: bg.customSelect,
     children: [
       K.jsx('option', { value: '', disabled: !0, children: e.placeholder ?? 'Select your option' }),
       e.options.map((t) => K.jsx('option', { value: t.value, children: t.label ?? t.value }, t.value)),
@@ -9946,16 +9946,16 @@ function Gc(e) {
   });
 }
 var di = ((e) => ((e.Easy = 'easy'), (e.Medium = 'medium'), (e.Hard = 'hard'), e))(di || {});
-const eg = '_createButton_hrbk9_1',
-  tg = { createButton: eg };
-function ng() {
+const e0 = '_createButton_hrbk9_1',
+  t0 = { createButton: e0 };
+function n0() {
   const [e, t] = P.useState([]),
     [n, r] = P.useState(void 0);
   P.useEffect(() => {
     const a = new AbortController();
     return (
       (async () => {
-        const p = (await K0({ abortAxiosSignal: a.signal })).map(J0);
+        const p = (await Kg({ abortAxiosSignal: a.signal })).map(Jg);
         t(p);
       })(),
       () => {
@@ -9967,7 +9967,7 @@ function ng() {
     [i, l] = P.useState(void 0),
     u = Ip(),
     s = async (a, f) => {
-      const p = await q0({ categoryId: a, difficulty: f });
+      const p = await qg({ categoryId: a, difficulty: f });
       u({ type: 'create', payload: p });
     };
   return K.jsxs(K.Fragment, {
@@ -9982,7 +9982,7 @@ function ng() {
       }),
       K.jsx('button', {
         id: 'createBtn',
-        className: tg.createButton,
+        className: t0.createButton,
         disabled: !n || !i,
         onClick: () => s(n, i),
         children: 'Create',
@@ -10018,7 +10018,7 @@ var ce;
   (e.Pop = 'POP'), (e.Push = 'PUSH'), (e.Replace = 'REPLACE');
 })(ce || (ce = {}));
 const Zc = 'popstate';
-function rg(e) {
+function r0(e) {
   e === void 0 && (e = {});
   function t(r, o) {
     let { pathname: i, search: l, hash: u } = r.location;
@@ -10032,7 +10032,7 @@ function rg(e) {
   function n(r, o) {
     return typeof o == 'string' ? o : Nn(o);
   }
-  return ig(t, n, null, e);
+  return i0(t, n, null, e);
 }
 function V(e, t) {
   if (e === !1 || e === null || typeof e > 'u') throw new Error(t);
@@ -10045,7 +10045,7 @@ function pr(e, t) {
     } catch {}
   }
 }
-function og() {
+function o0() {
   return Math.random().toString(36).substr(2, 8);
 }
 function bc(e, t) {
@@ -10056,7 +10056,7 @@ function vo(e, t, n, r) {
     n === void 0 && (n = null),
     X({ pathname: typeof e == 'string' ? e : e.pathname, search: '', hash: '' }, typeof t == 'string' ? It(t) : t, {
       state: n,
-      key: (t && t.key) || r || og(),
+      key: (t && t.key) || r || o0(),
     })
   );
 }
@@ -10078,7 +10078,7 @@ function It(e) {
   }
   return t;
 }
-function ig(e, t, n, r) {
+function i0(e, t, n, r) {
   r === void 0 && (r = {});
   let { window: o = document.defaultView, v5Compat: i = !1 } = r,
     l = o.history,
@@ -10158,8 +10158,8 @@ var de;
 (function (e) {
   (e.data = 'data'), (e.deferred = 'deferred'), (e.redirect = 'redirect'), (e.error = 'error');
 })(de || (de = {}));
-const lg = new Set(['lazy', 'caseSensitive', 'path', 'id', 'index', 'children']);
-function ug(e) {
+const l0 = new Set(['lazy', 'caseSensitive', 'path', 'id', 'index', 'children']);
+function u0(e) {
   return e.index === !0;
 }
 function as(e, t, n, r) {
@@ -10175,7 +10175,7 @@ function as(e, t, n, r) {
           !r[u],
           'Found a route id collision on id "' + u + `".  Route id's must be globally unique within Data Router usages`,
         ),
-        ug(o))
+        u0(o))
       ) {
         let s = X({}, o, t(o), { id: u });
         return (r[u] = s), s;
@@ -10192,9 +10192,9 @@ function qn(e, t, n) {
     o = gr(r.pathname || '/', n);
   if (o == null) return null;
   let i = uh(e);
-  sg(i);
+  s0(i);
   let l = null;
-  for (let u = 0; l == null && u < i.length; ++u) l = vg(i[u], Sg(o));
+  for (let u = 0; l == null && u < i.length; ++u) l = v0(i[u], S0(o));
   return l;
 }
 function uh(e, t, n, r) {
@@ -10225,7 +10225,7 @@ function uh(e, t, n, r) {
         'Index routes must not have child routes. Please remove ' + ('all child routes from route path "' + a + '".'),
       ),
       uh(i.children, t, f, a)),
-      !(i.path == null && !i.index) && t.push({ path: a, score: mg(a, i.index), routesMeta: f });
+      !(i.path == null && !i.index) && t.push({ path: a, score: m0(a, i.index), routesMeta: f });
   };
   return (
     e.forEach((i, l) => {
@@ -10251,36 +10251,36 @@ function sh(e) {
     u.map((s) => (e.startsWith('/') && s === '' ? '/' : s))
   );
 }
-function sg(e) {
+function s0(e) {
   e.sort((t, n) =>
     t.score !== n.score
       ? n.score - t.score
-      : yg(
+      : y0(
           t.routesMeta.map((r) => r.childrenIndex),
           n.routesMeta.map((r) => r.childrenIndex),
         ),
   );
 }
-const ag = /^:\w+$/,
-  cg = 3,
-  fg = 2,
-  dg = 1,
-  pg = 10,
-  hg = -2,
+const a0 = /^:\w+$/,
+  c0 = 3,
+  f0 = 2,
+  d0 = 1,
+  p0 = 10,
+  h0 = -2,
   ef = (e) => e === '*';
-function mg(e, t) {
+function m0(e, t) {
   let n = e.split('/'),
     r = n.length;
   return (
-    n.some(ef) && (r += hg),
-    t && (r += fg),
-    n.filter((o) => !ef(o)).reduce((o, i) => o + (ag.test(i) ? cg : i === '' ? dg : pg), r)
+    n.some(ef) && (r += h0),
+    t && (r += f0),
+    n.filter((o) => !ef(o)).reduce((o, i) => o + (a0.test(i) ? c0 : i === '' ? d0 : p0), r)
   );
 }
-function yg(e, t) {
+function y0(e, t) {
   return e.length === t.length && e.slice(0, -1).every((r, o) => r === t[o]) ? e[e.length - 1] - t[t.length - 1] : 0;
 }
-function vg(e, t) {
+function v0(e, t) {
   let { routesMeta: n } = e,
     r = {},
     o = '/',
@@ -10289,18 +10289,18 @@ function vg(e, t) {
     let u = n[l],
       s = l === n.length - 1,
       a = o === '/' ? t : t.slice(o.length) || '/',
-      f = gg({ path: u.relativePath, caseSensitive: u.caseSensitive, end: s }, a);
+      f = g0({ path: u.relativePath, caseSensitive: u.caseSensitive, end: s }, a);
     if (!f) return null;
     Object.assign(r, f.params);
     let p = u.route;
-    i.push({ params: r, pathname: zt([o, f.pathname]), pathnameBase: xg(zt([o, f.pathnameBase])), route: p }),
+    i.push({ params: r, pathname: zt([o, f.pathname]), pathnameBase: x0(zt([o, f.pathnameBase])), route: p }),
       f.pathnameBase !== '/' && (o = zt([o, f.pathnameBase]));
   }
   return i;
 }
-function gg(e, t) {
+function g0(e, t) {
   typeof e == 'string' && (e = { path: e, caseSensitive: !1, end: !0 });
-  let [n, r] = wg(e.path, e.caseSensitive, e.end),
+  let [n, r] = w0(e.path, e.caseSensitive, e.end),
     o = t.match(n);
   if (!o) return null;
   let i = o[0],
@@ -10312,14 +10312,14 @@ function gg(e, t) {
         let m = u[p] || '';
         l = i.slice(0, i.length - m.length).replace(/(.)\/+$/, '$1');
       }
-      return (a[f] = Eg(u[p] || '', f)), a;
+      return (a[f] = E0(u[p] || '', f)), a;
     }, {}),
     pathname: i,
     pathnameBase: l,
     pattern: e,
   };
 }
-function wg(e, t, n) {
+function w0(e, t, n) {
   t === void 0 && (t = !1),
     n === void 0 && (n = !0),
     pr(
@@ -10348,7 +10348,7 @@ function wg(e, t, n) {
     [new RegExp(o, t ? void 0 : 'i'), r]
   );
 }
-function Sg(e) {
+function S0(e) {
   try {
     return decodeURI(e);
   } catch (t) {
@@ -10364,7 +10364,7 @@ function Sg(e) {
     );
   }
 }
-function Eg(e, t) {
+function E0(e, t) {
   try {
     return decodeURIComponent(e);
   } catch (n) {
@@ -10388,12 +10388,12 @@ function gr(e, t) {
     r = e.charAt(n);
   return r && r !== '/' ? null : e.slice(n) || '/';
 }
-function _g(e, t) {
+function _0(e, t) {
   t === void 0 && (t = '/');
   let { pathname: n, search: r = '', hash: o = '' } = typeof e == 'string' ? It(e) : e;
-  return { pathname: n ? (n.startsWith('/') ? n : kg(n, t)) : t, search: Cg(r), hash: Rg(o) };
+  return { pathname: n ? (n.startsWith('/') ? n : k0(n, t)) : t, search: C0(r), hash: R0(o) };
 }
-function kg(e, t) {
+function k0(e, t) {
   let n = t.replace(/\/+$/, '').split('/');
   return (
     e.split('/').forEach((o) => {
@@ -10437,15 +10437,15 @@ function pl(e, t, n, r) {
     }
     u = p >= 0 ? t[p] : '/';
   }
-  let s = _g(o, u),
+  let s = _0(o, u),
     a = l && l !== '/' && l.endsWith('/'),
     f = (i || l === '.') && n.endsWith('/');
   return !s.pathname.endsWith('/') && (a || f) && (s.pathname += '/'), s;
 }
 const zt = (e) => e.join('/').replace(/\/\/+/g, '/'),
-  xg = (e) => e.replace(/\/+$/, '').replace(/^\/*/, '/'),
-  Cg = (e) => (!e || e === '?' ? '' : e.startsWith('?') ? e : '?' + e),
-  Rg = (e) => (!e || e === '#' ? '' : e.startsWith('#') ? e : '#' + e);
+  x0 = (e) => e.replace(/\/+$/, '').replace(/^\/*/, '/'),
+  C0 = (e) => (!e || e === '?' ? '' : e.startsWith('?') ? e : '?' + e),
+  R0 = (e) => (!e || e === '#' ? '' : e.startsWith('#') ? e : '#' + e);
 class ha {
   constructor(t, n, r, o) {
     o === void 0 && (o = !1),
@@ -10465,11 +10465,11 @@ function ah(e) {
   );
 }
 const ch = ['post', 'put', 'patch', 'delete'],
-  Pg = new Set(ch),
-  Ng = ['get', ...ch],
-  Tg = new Set(Ng),
-  Og = new Set([301, 302, 303, 307, 308]),
-  Lg = new Set([307, 308]),
+  P0 = new Set(ch),
+  N0 = ['get', ...ch],
+  T0 = new Set(N0),
+  O0 = new Set([301, 302, 303, 307, 308]),
+  L0 = new Set([307, 308]),
   iu = {
     state: 'idle',
     location: void 0,
@@ -10478,20 +10478,20 @@ const ch = ['post', 'put', 'patch', 'delete'],
     formEncType: void 0,
     formData: void 0,
   },
-  Dg = { state: 'idle', data: void 0, formMethod: void 0, formAction: void 0, formEncType: void 0, formData: void 0 },
+  D0 = { state: 'idle', data: void 0, formMethod: void 0, formAction: void 0, formEncType: void 0, formData: void 0 },
   tf = { state: 'unblocked', proceed: void 0, reset: void 0, location: void 0 },
   fh = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
   dh = typeof window < 'u' && typeof window.document < 'u' && typeof window.document.createElement < 'u',
-  zg = !dh,
-  Mg = (e) => ({ hasErrorBoundary: !!e.hasErrorBoundary });
-function Ag(e) {
+  z0 = !dh,
+  M0 = (e) => ({ hasErrorBoundary: !!e.hasErrorBoundary });
+function A0(e) {
   V(e.routes.length > 0, 'You must provide a non-empty routes array to createRouter');
   let t;
   if (e.mapRouteProperties) t = e.mapRouteProperties;
   else if (e.detectErrorBoundary) {
     let S = e.detectErrorBoundary;
     t = (E) => ({ hasErrorBoundary: S(E) });
-  } else t = Mg;
+  } else t = M0;
   let n = {},
     r = as(e.routes, t, void 0, n),
     o,
@@ -10700,7 +10700,7 @@ function Ag(e) {
       wl(), ne(E, { matches: ve, loaderData: {}, errors: { [Ye.id]: ye } });
       return;
     }
-    if (c.initialized && Bg(c.location, E) && !(k && k.submission && Pt(k.submission.formMethod))) {
+    if (c.initialized && B0(c.location, E) && !(k && k.submission && Pt(k.submission.formMethod))) {
       ne(E, { matches: j });
       return;
     }
@@ -10836,10 +10836,10 @@ function Ag(e) {
     return X({ loaderData: Lo, errors: El }, Do ? { fetchers: new Map(c.fetchers) } : {});
   }
   function ya(S) {
-    return c.fetchers.get(S) || Dg;
+    return c.fetchers.get(S) || D0;
   }
   function kh(S, E, k, D) {
-    if (zg)
+    if (z0)
       throw new Error(
         "router.fetch() was called during the server render, but it shouldn't be. You are likely calling a useFetcher() method in the body of your component. Try moving it to a useEffect or a callback.",
       );
@@ -10994,7 +10994,7 @@ function Ag(e) {
     let A = j === !0 ? ce.Replace : ce.Push,
       { formMethod: Y, formAction: Z, formEncType: ke, formData: ye } = S.navigation;
     !M && Y && Z && ye && ke && (M = { formMethod: Y, formAction: Z, formEncType: ke, formData: ye }),
-      Lg.has(E.status) && M && Pt(M.formMethod)
+      L0.has(E.status) && M && Pt(M.formMethod)
         ? await qe(A, F, { submission: X({}, M, { formAction: E.location }), preventScrollReset: h })
         : B
         ? await qe(A, F, {
@@ -11201,7 +11201,7 @@ function Ag(e) {
     R
   );
 }
-function Fg(e) {
+function F0(e) {
   return e != null && 'formData' in e;
 }
 function cs(e, t, n, r, o, i, l) {
@@ -11232,8 +11232,8 @@ function cs(e, t, n, r, o, i, l) {
   );
 }
 function nf(e, t, n, r) {
-  if (!r || !Fg(r)) return { path: n };
-  if (r.formMethod && !Wg(r.formMethod)) return { path: n, error: st(405, { method: r.formMethod }) };
+  if (!r || !F0(r)) return { path: n };
+  if (r.formMethod && !W0(r.formMethod)) return { path: n, error: st(405, { method: r.formMethod }) };
   let o;
   if (r.formData) {
     let u = r.formMethod || 'get';
@@ -11252,7 +11252,7 @@ function nf(e, t, n, r) {
     l = hh(r.formData);
   return t && i.search && ma(i.search) && l.append('index', ''), (i.search = '?' + l), { path: Nn(i), submission: o };
 }
-function jg(e, t) {
+function j0(e, t) {
   let n = e;
   if (t) {
     let r = e.findIndex((o) => o.route.id === t);
@@ -11265,10 +11265,10 @@ function rf(e, t, n, r, o, i, l, u, s, a, f, p, m) {
     y = e.createURL(t.location),
     v = e.createURL(o),
     R = m ? Object.keys(m)[0] : void 0,
-    d = jg(n, R).filter((g, C) => {
+    d = j0(n, R).filter((g, C) => {
       if (g.route.lazy) return !0;
       if (g.route.loader == null) return !1;
-      if (Ug(t.loaderData, t.matches[C], g) || l.some((z) => z === g.route.id)) return !0;
+      if (U0(t.loaderData, t.matches[C], g) || l.some((z) => z === g.route.id)) return !0;
       let N = t.matches[C],
         T = g;
       return of(
@@ -11312,7 +11312,7 @@ function rf(e, t, n, r, o, i, l, u, s, a, f, p, m) {
     [d, h]
   );
 }
-function Ug(e, t, n) {
+function U0(e, t, n) {
   let r = !t || n.route.id !== t.route.id,
     o = e[n.route.id] === void 0;
   return r || o;
@@ -11346,7 +11346,7 @@ async function lf(e, t, n) {
         '" defined but its lazy function is also returning a value for this property. ' +
         ('The lazy route property "' + l + '" will be ignored.'),
     ),
-      !s && !lg.has(l) && (i[l] = r[l]);
+      !s && !l0.has(l) && (i[l] = r[l]);
   }
   Object.assign(o, i), Object.assign(o, X({}, t(o), { lazy: void 0 }));
 }
@@ -11393,9 +11393,9 @@ async function zr(e, t, n, r, o, i, l, u, s, a) {
   } finally {
     m && t.signal.removeEventListener('abort', m);
   }
-  if (Hg(p)) {
+  if (H0(p)) {
     let R = p.status;
-    if (Og.has(R)) {
+    if (O0.has(R)) {
       let h = p.headers.get('Location');
       if ((V(h, 'Redirects returned/thrown from loaders/actions must have a Location header'), !fh.test(h)))
         h = cs(new URL(t.url), r.slice(0, r.indexOf(n) + 1), l, !0, h);
@@ -11419,7 +11419,7 @@ async function zr(e, t, n, r, o, i, l, u, s, a) {
     );
   }
   if (f === de.error) return { type: f, error: p };
-  if ($g(p)) {
+  if ($0(p)) {
     var y, v;
     return {
       type: de.deferred,
@@ -11444,7 +11444,7 @@ function hh(e) {
   for (let [n, r] of e.entries()) t.append(n, r instanceof File ? r.name : r);
   return t;
 }
-function Ig(e, t, n, r, o) {
+function I0(e, t, n, r, o) {
   let i = {},
     l = null,
     u,
@@ -11472,7 +11472,7 @@ function Ig(e, t, n, r, o) {
   );
 }
 function uf(e, t, n, r, o, i, l, u) {
-  let { loaderData: s, errors: a } = Ig(t, n, r, o, u);
+  let { loaderData: s, errors: a } = I0(t, n, r, o, u);
   for (let f = 0; f < i.length; f++) {
     let { key: p, match: m, controller: w } = i[f];
     V(l !== void 0 && l[f] !== void 0, 'Did not find corresponding fetcher result');
@@ -11567,7 +11567,7 @@ function mh(e) {
   let t = typeof e == 'string' ? It(e) : e;
   return Nn(X({}, t, { hash: '' }));
 }
-function Bg(e, t) {
+function B0(e, t) {
   return e.pathname !== t.pathname || e.search !== t.search
     ? !1
     : e.hash === ''
@@ -11585,7 +11585,7 @@ function qr(e) {
 function nr(e) {
   return (e && e.type) === de.redirect;
 }
-function $g(e) {
+function $0(e) {
   let t = e;
   return (
     t &&
@@ -11596,7 +11596,7 @@ function $g(e) {
     typeof t.resolveData == 'function'
   );
 }
-function Hg(e) {
+function H0(e) {
   return (
     e != null &&
     typeof e.status == 'number' &&
@@ -11605,11 +11605,11 @@ function Hg(e) {
     typeof e.body < 'u'
   );
 }
-function Wg(e) {
-  return Tg.has(e.toLowerCase());
+function W0(e) {
+  return T0.has(e.toLowerCase());
 }
 function Pt(e) {
-  return Pg.has(e.toLowerCase());
+  return P0.has(e.toLowerCase());
 }
 async function ff(e, t, n, r, o, i) {
   for (let l = 0; l < n.length; l++) {
@@ -11680,7 +11680,7 @@ const hl = P.createContext(null),
   ml = P.createContext(null),
   an = P.createContext({ outlet: null, matches: [], isDataRoute: !1 }),
   gh = P.createContext(null);
-function Vg(e, t) {
+function V0(e, t) {
   let { relative: n } = t === void 0 ? {} : t;
   Sr() || V(!1);
   let { basename: r, navigator: o } = P.useContext(wr),
@@ -11699,9 +11699,9 @@ function wh(e) {
 }
 function Sh() {
   let { isDataRoute: e } = P.useContext(an);
-  return e ? n1() : Qg();
+  return e ? n1() : Q0();
 }
-function Qg() {
+function Q0() {
   Sr() || V(!1);
   let e = P.useContext(hl),
     { basename: t, navigator: n } = P.useContext(wr),
@@ -11735,7 +11735,7 @@ function Eh(e, t) {
     i = JSON.stringify(Po(r).map((l) => l.pathnameBase));
   return P.useMemo(() => pl(e, JSON.parse(i), o, n === 'path'), [e, i, o, n]);
 }
-function Kg(e, t, n) {
+function K0(e, t, n) {
   Sr() || V(!1);
   let { navigator: r } = P.useContext(wr),
     { matches: o } = P.useContext(an),
@@ -11754,7 +11754,7 @@ function Kg(e, t, n) {
   let p = a.pathname || '/',
     m = u === '/' ? p : p.slice(u.length) || '/',
     w = qn(e, { pathname: m }),
-    y = Gg(
+    y = G0(
       w &&
         w.map((v) =>
           Object.assign({}, v, {
@@ -11782,7 +11782,7 @@ function Kg(e, t, n) {
       )
     : y;
 }
-function Jg() {
+function J0() {
   let e = t1(),
     t = ah(e) ? e.status + ' ' + e.statusText : e instanceof Error ? e.message : JSON.stringify(e),
     n = e instanceof Error ? e.stack : null,
@@ -11797,8 +11797,8 @@ function Jg() {
     i,
   );
 }
-const qg = P.createElement(Jg, null);
-class Yg extends P.Component {
+const q0 = P.createElement(J0, null);
+class Y0 extends P.Component {
   constructor(t) {
     super(t), (this.state = { location: t.location, revalidation: t.revalidation, error: t.error });
   }
@@ -11823,7 +11823,7 @@ class Yg extends P.Component {
       : this.props.children;
   }
 }
-function Xg(e) {
+function X0(e) {
   let { routeContext: t, match: n, children: r } = e,
     o = P.useContext(hl);
   return (
@@ -11835,7 +11835,7 @@ function Xg(e) {
     P.createElement(an.Provider, { value: t }, r)
   );
 }
-function Gg(e, t, n) {
+function G0(e, t, n) {
   var r;
   if ((t === void 0 && (t = []), n === void 0 && (n = null), e == null)) {
     var o;
@@ -11851,7 +11851,7 @@ function Gg(e, t, n) {
   return i.reduceRight((u, s, a) => {
     let f = s.route.id ? (l == null ? void 0 : l[s.route.id]) : null,
       p = null;
-    n && (p = s.route.errorElement || qg);
+    n && (p = s.route.errorElement || q0);
     let m = t.concat(i.slice(0, a + 1)),
       w = () => {
         let y;
@@ -11863,7 +11863,7 @@ function Gg(e, t, n) {
             : s.route.element
             ? (y = s.route.element)
             : (y = u),
-          P.createElement(Xg, {
+          P.createElement(X0, {
             match: s,
             routeContext: { outlet: u, matches: m, isDataRoute: n != null },
             children: y,
@@ -11871,7 +11871,7 @@ function Gg(e, t, n) {
         );
       };
     return n && (s.route.ErrorBoundary || s.route.errorElement || a === 0)
-      ? P.createElement(Yg, {
+      ? P.createElement(Y0, {
           location: n.location,
           revalidation: n.revalidation,
           component: p,
@@ -11899,11 +11899,11 @@ var go;
     (e.UseNavigateStable = 'useNavigate'),
     (e.UseRouteId = 'useRouteId');
 })(go || (go = {}));
-function Zg(e) {
+function Z0(e) {
   let t = P.useContext(hl);
   return t || V(!1), t;
 }
-function bg(e) {
+function b0(e) {
   let t = P.useContext(vh);
   return t || V(!1), t;
 }
@@ -11919,12 +11919,12 @@ function _h(e) {
 function t1() {
   var e;
   let t = P.useContext(gh),
-    n = bg(go.UseRouteError),
+    n = b0(go.UseRouteError),
     r = _h(go.UseRouteError);
   return t || ((e = n.errors) == null ? void 0 : e[r]);
 }
 function n1() {
-  let { router: e } = Zg(ds.UseNavigateStable),
+  let { router: e } = Z0(ds.UseNavigateStable),
     t = _h(go.UseNavigateStable),
     n = P.useRef(!1);
   return (
@@ -11978,7 +11978,7 @@ function r1(e) {
 }
 function o1(e) {
   let { routes: t, state: n } = e;
-  return Kg(t, void 0, n);
+  return K0(t, void 0, n);
 }
 function i1(e) {
   let { to: t, replace: n, state: r, relative: o } = e;
@@ -12070,10 +12070,10 @@ function c1(e, t) {
 }
 const f1 = ['onClick', 'relative', 'reloadDocument', 'replace', 'state', 'target', 'to', 'preventScrollReset'];
 function d1(e, t) {
-  return Ag({
+  return A0({
     basename: t == null ? void 0 : t.basename,
     future: wo({}, t == null ? void 0 : t.future, { v7_prependBasename: !0 }),
-    history: rg({ window: t == null ? void 0 : t.window }),
+    history: r0({ window: t == null ? void 0 : t.window }),
     hydrationData: (t == null ? void 0 : t.hydrationData) || p1(),
     routes: e,
     mapRouteProperties: u1,
@@ -12120,7 +12120,7 @@ const m1 = typeof window < 'u' && typeof window.document < 'u' && typeof window.
           g = gr(h.pathname, m);
         h.origin === d.origin && g != null ? (a = g + h.search + h.hash) : (y = !0);
       } catch {}
-    let v = Vg(a, { relative: o }),
+    let v = V0(a, { relative: o }),
       R = g1(a, { replace: l, state: u, target: s, preventScrollReset: f, relative: o });
     function c(d) {
       r && r(d), d.defaultPrevented || R(d);
@@ -12151,7 +12151,9 @@ function g1(e, t) {
     [s, u, a, r, o, n, e, i, l],
   );
 }
-function w1() {
+const w1 = '_marginLeft_p80pq_1',
+  S1 = { marginLeft: w1 };
+function E1() {
   const [e, t] = P.useState(!1),
     n = () => {
       t(!0);
@@ -12159,25 +12161,25 @@ function w1() {
   return K.jsxs(K.Fragment, {
     children: [
       K.jsx('h1', { children: 'QUIZ MAKER' }),
-      K.jsx(ng, {}),
+      K.jsx(n0, {}),
       K.jsx(Bp, { onQuizFinished: n }),
-      e && K.jsx(v1, { role: 'button', to: '/results', children: 'Submit' }),
+      e && K.jsx(v1, { to: '/results', role: 'button', className: `buttonLink ${S1.marginLeft}`, children: 'Submit' }),
     ],
   });
 }
-function S1() {
+function _1() {
   return K.jsxs('div', { children: [K.jsx('h1', { children: 'RESULTS' }), K.jsx(Bp, { showCorrection: !0 })] });
 }
-function E1({ children: e }) {
+function k1({ children: e }) {
   const t = Up(),
     n = t.filter((o) => o.selectedOptionId).length;
   return t.length > 0 && n === t.length ? e : K.jsx(i1, { replace: !0, to: '/' });
 }
-function _1() {
+function x1() {
   const e = d1([
-    { path: '/', element: K.jsx(w1, {}) },
-    { path: '/results', element: K.jsx(E1, { children: K.jsx(S1, {}) }) },
+    { path: '/', element: K.jsx(E1, {}) },
+    { path: '/results', element: K.jsx(k1, { children: K.jsx(_1, {}) }) },
   ]);
   return K.jsx(vv, { children: K.jsx(r1, { router: e }) });
 }
-lu.createRoot(document.getElementById('root')).render(K.jsx(Jh.StrictMode, { children: K.jsx(_1, {}) }));
+lu.createRoot(document.getElementById('root')).render(K.jsx(Jh.StrictMode, { children: K.jsx(x1, {}) }));

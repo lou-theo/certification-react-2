@@ -2,6 +2,7 @@ import QuestionList from '@components/QuestionList/QuestionList.tsx';
 import QuizSelectors from '@components/QuizSelectors/QuizSelectors.tsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './QuizMaker.module.scss';
 
 export default function QuizMaker() {
   const [isQuizFinished, setIsQuizFinished] = useState(false);
@@ -16,7 +17,7 @@ export default function QuizMaker() {
       <QuizSelectors />
       <QuestionList onQuizFinished={onQuizFinished} />
       {isQuizFinished && (
-        <Link role="button" to={'/results'}>
+        <Link to={'/results'} role="button" className={`buttonLink ${styles.marginLeft}`}>
           Submit
         </Link>
       )}
