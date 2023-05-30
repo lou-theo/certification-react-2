@@ -61,6 +61,28 @@
 ._marginLeft_p80pq_1 {
   margin-left: 100px;
 }
+._score_15qac_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
+._score__loser_15qac_12 {
+  background: #dc3545;
+  color: #fff;
+}
+._score__winner_15qac_17 {
+  background: #28a745;
+  color: #fff;
+}
+._score__average_15qac_22 {
+  background: yellow;
+}
 .buttonLink {
   text-decoration: none;
   background-color: #5d5a5a;

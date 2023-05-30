@@ -1,0 +1,28 @@
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+
+  &__loser {
+    composes: score;
+    background: #dc3545;
+    color: white;
+  }
+
+  &__winner {
+    composes: score;
+    background: #28a745;
+    color: white;
+  }
+
+  &__average {
+    composes: score;
+    background: yellow;
+  }
+}

@@ -1,10 +1,12 @@
 import QuestionList from '@components/QuestionList/QuestionList.tsx';
+import QuizScore from '@components/QuizScore/QuizScore.tsx';
 
 export default function QuizResults() {
   return (
-    <div>
+    <>
       <h1>RESULTS</h1>
       <QuestionList showCorrection />
-    </div>
+      <QuizScore />
+    </>
   );
 }
