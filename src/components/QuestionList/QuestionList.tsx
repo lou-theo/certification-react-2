@@ -4,10 +4,11 @@ import { useState } from 'react';
 import styles from './QuestionList.module.scss';
 
 interface QuestionListProps {
-  onQuizFinished: () => void;
+  onQuizFinished?: () => void;
+  showCorrection?: boolean;
 }
 
-export default function QuestionList(props: QuestionListProps) {
+export default function QuestionList({ showCorrection = false, onQuizFinished }: QuestionListProps) {
   const questions = useQuestions();
   const dispatch = useQuestionsDispatch();
 
@@ -19,15 +20,20 @@ export default function QuestionList(props: QuestionListProps) {
     const newUniqAnsweredQuestionIds = [...new Set([...answeredQuestionIds, questionId])];
     setAnsweredQuestionIds(newUniqAnsweredQuestionIds);
 
-    if (newUniqAnsweredQuestionIds.length === questions.length) {
-      props.onQuizFinished();
+    if (newUniqAnsweredQuestionIds.length === questions.length && !showCorrection && onQuizFinished) {
+      onQuizFinished();
     }
   };
 
   return (
     <div className={styles.questionList}>
       {questions.map((question) => (
-        <Question key={question.id} question={question} onQuestionAnswered={onQuestionAnswered} />
+        <Question
+          key={question.id}
+          question={question}
+          showCorrection={showCorrection}
+          onQuestionAnswered={onQuestionAnswered}
+        />
       ))}
     </div>
   );

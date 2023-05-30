@@ -1,4 +1,4 @@
-._option_1m9vx_1 {
+._option_fhjw4_1 {
   border: 1px solid #ccc;
   background-color: #fff;
   color: #000;
@@ -10,22 +10,22 @@
   transition: all 0.3s ease-in-out;
   height: 3rem;
 }
-._option__correct_1m9vx_16 {
+._option__correct_fhjw4_16 {
   border-color: #28a745;
   background-color: #28a745;
   color: #fff;
 }
-._option__incorrect_1m9vx_22 {
+._option__incorrect_fhjw4_22 {
   border-color: #dc3545;
   background-color: #dc3545;
   color: #fff;
 }
-._option__selected_1m9vx_28 {
+._option__selected_fhjw4_28 {
   border-color: #007bff;
   background-color: #007bff;
   color: #fff;
 }
-._option_1m9vx_1:hover {
+._option_fhjw4_1:not(._disabled_fhjw4_34):hover {
   border-color: #007bff;
   background-color: #007bff;
   color: #fff;

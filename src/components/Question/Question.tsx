@@ -6,11 +6,28 @@ import styles from './Question.module.scss';
 interface QuestionProps {
   question: QuestionModel;
   onQuestionAnswered: (questionId: string, optionId: string) => void;
+  showCorrection: boolean;
 }
 
 export default function Question(props: QuestionProps) {
   const onQuestionAnswered = (optionId: string) => {
     props.onQuestionAnswered(props.question.id, optionId);
+  };
+
+  const getQuestionOptionStatus = (optionId: string): QuestionOptionStatusEnum => {
+    if (!props.showCorrection) {
+      return props.question.selectedOptionId === optionId
+        ? QuestionOptionStatusEnum.selected
+        : QuestionOptionStatusEnum.unanswered;
+    }
+    const correctOption = props.question.options.find((option) => option.isAnswer);
+    if (correctOption?.id === optionId) {
+      return QuestionOptionStatusEnum.correct;
+    }
+    if (props.question.selectedOptionId === optionId && correctOption?.id !== optionId) {
+      return QuestionOptionStatusEnum.incorrect;
+    }
+    return QuestionOptionStatusEnum.unanswered;
   };
 
   return (
@@ -21,11 +38,8 @@ export default function Question(props: QuestionProps) {
           <QuestionOption
             key={option.id}
             option={option}
-            status={
-              props.question.selectedOptionId === option.id
-                ? QuestionOptionStatusEnum.selected
-                : QuestionOptionStatusEnum.unanswered
-            }
+            status={getQuestionOptionStatus(option.id)}
+            disabled={props.showCorrection}
             onClick={onQuestionAnswered}
           />
         ))}
