@@ -12223,7 +12223,7 @@ function A1() {
       { path: '/', element: H.jsx(C1, {}) },
       { path: '/results', element: H.jsx(M1, { children: H.jsx(z1, {}) }) },
     ],
-    { basename: '/react-router-quiz' },
+    { basename: '/react-certification-2/' },
   );
   return H.jsx(u1, { router: e });
 }

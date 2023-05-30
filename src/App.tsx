@@ -35,7 +35,7 @@ export default function App() {
         ),
       },
     ],
-    { basename: isProduction ? '/react-router-quiz' : undefined },
+    { basename: isProduction ? '/react-certification-2/' : undefined },
   );
 
   return <RouterProvider router={router} />;
