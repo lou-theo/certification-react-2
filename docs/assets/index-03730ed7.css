@@ -58,8 +58,19 @@
   padding: 0 1em;
   border-radius: 0.25em;
 }
-._marginLeft_p80pq_1 {
+._marginLeft_1hp6m_1 {
   margin-left: 100px;
+}
+._buttonLink_1hp6m_5 {
+  text-decoration: none;
+  background-color: #5d5a5a;
+  color: #fff;
+  border-radius: 5px;
+  height: 3rem;
+  width: 200px;
+  display: block;
+  text-align: center;
+  line-height: 3rem;
 }
 ._score_15qac_1 {
   display: flex;
@@ -83,8 +94,7 @@
 ._score__average_15qac_22 {
   background: yellow;
 }
-.buttonLink {
-  text-decoration: none;
+._createQuizButton_xpgxu_1 {
   background-color: #5d5a5a;
   color: #fff;
   border-radius: 5px;
@@ -93,4 +103,6 @@
   display: block;
   text-align: center;
   line-height: 3rem;
+  cursor: pointer;
+  margin: 2rem auto;
 }

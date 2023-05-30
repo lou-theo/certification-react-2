@@ -14,7 +14,7 @@ export default function QuizMaker() {
       <QuizSelectors />
       <QuestionList />
       {isQuizCompleted(questions) && (
-        <Link to={'/results'} role="button" className={`buttonLink ${styles.marginLeft}`}>
+        <Link to={'/results'} role="button" className={`${styles.buttonLink} ${styles.marginLeft}`}>
           Submit
         </Link>
       )}

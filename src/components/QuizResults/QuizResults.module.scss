@@ -1,9 +1,4 @@
-.marginLeft {
-  margin-left: 100px;
-}
-
-.buttonLink {
-  text-decoration: none;
+.createQuizButton {
   background-color: #5d5a5a;
   color: #ffffff;
   border-radius: 5px;
@@ -12,4 +7,6 @@
   display: block;
   text-align: center;
   line-height: 3rem;
+  cursor: pointer;
+  margin: 2rem auto;
 }
