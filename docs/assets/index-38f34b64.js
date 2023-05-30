@@ -801,7 +801,7 @@ const Ma = 'questions',
 function mm(e, t) {
   switch (t.type) {
     case 'create': {
-      e.push(...t.payload);
+      e.splice(0, e.length, ...t.payload);
       return;
     }
     case 'answerQuestion': {

@@ -12,7 +12,7 @@ export const QuestionsDispatchContext = createContext<Dispatch<QuestionsAction>>
 function questionsReducer(questions: QuestionModel[], action: QuestionsAction): void {
   switch (action.type) {
     case 'create': {
-      questions.push(...action.payload);
+      questions.splice(0, questions.length, ...action.payload);
       return;
     }
     case 'answerQuestion': {
