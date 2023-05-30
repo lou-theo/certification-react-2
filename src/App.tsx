@@ -18,20 +18,25 @@ function IsQuizCompletedGuard({ children }: { children: Element }) {
 }
 
 export default function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <QuizMaker />,
-    },
-    {
-      path: '/results',
-      element: (
-        <IsQuizCompletedGuard>
-          <QuizResults />
-        </IsQuizCompletedGuard>
-      ),
-    },
-  ]);
+  const isProduction = process.env.NODE_ENV === 'production';
+
+  const router = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <QuizMaker />,
+      },
+      {
+        path: '/results',
+        element: (
+          <IsQuizCompletedGuard>
+            <QuizResults />
+          </IsQuizCompletedGuard>
+        ),
+      },
+    ],
+    { basename: isProduction ? '/react-router-quiz' : undefined },
+  );
 
   return <RouterProvider router={router} />;
 }

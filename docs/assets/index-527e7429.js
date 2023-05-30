@@ -12218,10 +12218,13 @@ function M1({ children: e }) {
   return Vp(t) ? e : H.jsx(a1, { replace: !0, to: '/' });
 }
 function A1() {
-  const e = y1([
-    { path: '/', element: H.jsx(C1, {}) },
-    { path: '/results', element: H.jsx(M1, { children: H.jsx(z1, {}) }) },
-  ]);
+  const e = y1(
+    [
+      { path: '/', element: H.jsx(C1, {}) },
+      { path: '/results', element: H.jsx(M1, { children: H.jsx(z1, {}) }) },
+    ],
+    { basename: '/react-router-quiz' },
+  );
   return H.jsx(u1, { router: e });
 }
 hu.createRoot(document.getElementById('root')).render(
