@@ -1,5 +1,5 @@
+import { isQuizCompleted } from '@/helpers/quiz.helper.ts';
 import { useQuestions } from '@/hooks/Questions.hooks.ts';
-import { QuestionsProvider } from '@/store/QuestionsProvider.tsx';
 import QuizMaker from '@components/QuizMaker/QuizMaker.tsx';
 import QuizResults from '@components/QuizResults/QuizResults.tsx';
 import * as React from 'react';
@@ -9,10 +9,8 @@ import Element = React.JSX.Element;
 
 function IsQuizCompletedGuard({ children }: { children: Element }) {
   const questions = useQuestions();
-  const numberOfSelectedQuestions = questions.filter((question) => question.selectedOptionId).length;
-  const isQuizComplete = questions.length > 0 && numberOfSelectedQuestions === questions.length;
 
-  if (!isQuizComplete) {
+  if (!isQuizCompleted(questions)) {
     return <Navigate replace to="/" />;
   }
 
@@ -35,9 +33,5 @@ export default function App() {
     },
   ]);
 
-  return (
-    <QuestionsProvider>
-      <RouterProvider router={router} />
-    </QuestionsProvider>
-  );
+  return <RouterProvider router={router} />;
 }
