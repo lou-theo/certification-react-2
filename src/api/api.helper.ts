@@ -1,6 +1,6 @@
 import axios, { GenericAbortSignal } from 'axios';
 
-export const getUrl = async <TReturn>(
+export const getFromUrl = async <TReturn>(
   url: string,
   options?: {
     abortAxiosSignal?: GenericAbortSignal;

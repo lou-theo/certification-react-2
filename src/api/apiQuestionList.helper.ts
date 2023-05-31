@@ -1,4 +1,4 @@
-import { getUrl } from '@/api/api.helper.ts';
+import { getFromUrl } from '@/api/api.helper.ts';
 import { ApiQuestionModel } from '@models/api/ApiQuestion.model.ts';
 import { ApiQuestionListModel } from '@models/api/ApiQuestionList.model.ts';
 import { DifficultyLevelEnum } from '@models/DifficultyLevel.enum.ts';
@@ -14,7 +14,7 @@ export const fetchQuestionList = async (
 ): Promise<QuestionModel[]> => {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const numberOfQuestions = parseInt(import.meta.env.VITE_NUMBER_OF_QUESTIONS, 10);
-  const apiQuestionListModel: ApiQuestionListModel | undefined = await getUrl<ApiQuestionListModel>(
+  const apiQuestionListModel: ApiQuestionListModel | undefined = await getFromUrl<ApiQuestionListModel>(
     `${baseUrl}/api.php?amount=${numberOfQuestions}&category=${body.categoryId}&difficulty=${body.difficulty}&type=multiple`,
     options,
   );

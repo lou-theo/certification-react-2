@@ -1,4 +1,4 @@
-import { getUrl } from '@/api/api.helper.ts';
+import { getFromUrl } from '@/api/api.helper.ts';
 import { ApiCategoryModel } from '@models/api/ApiCategory.model.ts';
 import { ApiTriviaCategoriesModel } from '@models/api/ApiTriviaCategories.model.ts';
 import { SelectOptionModel } from '@models/SelectOption.model.ts';
@@ -8,7 +8,7 @@ export const fetchCategories = async (options?: {
   abortAxiosSignal?: GenericAbortSignal;
 }): Promise<ApiCategoryModel[]> => {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
-  const apiTriviaCategoriesModel: ApiTriviaCategoriesModel | undefined = await getUrl<ApiTriviaCategoriesModel>(
+  const apiTriviaCategoriesModel: ApiTriviaCategoriesModel | undefined = await getFromUrl<ApiTriviaCategoriesModel>(
     baseUrl + '/api_category.php',
     options,
   );
