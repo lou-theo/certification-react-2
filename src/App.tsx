@@ -18,8 +18,6 @@ function IsQuizCompletedGuard({ children }: { children: Element }) {
 }
 
 export default function App() {
-  const isProduction = process.env.NODE_ENV === 'production';
-
   const router = createBrowserRouter(
     [
       {
@@ -35,7 +33,7 @@ export default function App() {
         ),
       },
     ],
-    { basename: isProduction ? '/react-certification-2/' : undefined },
+    { basename: import.meta.env.VITE_APP_BASE_PATH },
   );
 
   return <RouterProvider router={router} />;

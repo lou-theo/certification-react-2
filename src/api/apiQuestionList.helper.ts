@@ -12,8 +12,10 @@ export const fetchQuestionList = async (
     abortAxiosSignal?: GenericAbortSignal;
   },
 ): Promise<QuestionModel[]> => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  const numberOfQuestions = parseInt(import.meta.env.VITE_NUMBER_OF_QUESTIONS, 10);
   const apiQuestionListModel: ApiQuestionListModel | undefined = await getUrl<ApiQuestionListModel>(
-    `https://opentdb.com/api.php?amount=5&category=${body.categoryId}&difficulty=${body.difficulty}&type=multiple`,
+    `${baseUrl}/api.php?amount=${numberOfQuestions}&category=${body.categoryId}&difficulty=${body.difficulty}&type=multiple`,
     options,
   );
   return apiQuestionListModel ? mapApiQuestionListToQuestionModelList(apiQuestionListModel) : [];

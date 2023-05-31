@@ -7,8 +7,9 @@ import { GenericAbortSignal } from 'axios';
 export const fetchCategories = async (options?: {
   abortAxiosSignal?: GenericAbortSignal;
 }): Promise<ApiCategoryModel[]> => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const apiTriviaCategoriesModel: ApiTriviaCategoriesModel | undefined = await getUrl<ApiTriviaCategoriesModel>(
-    'https://opentdb.com/api_category.php',
+    baseUrl + '/api_category.php',
     options,
   );
   return apiTriviaCategoriesModel?.trivia_categories ?? [];
